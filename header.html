@@ -1,9 +1,8 @@
 <div id="utter-wrapper">
             <div class="page-mask">
        
-      </div>
-      
-      
+            </div>
+            
       		<!-- Header Portion -->
             <header id="header" class="header" data-offset-top="10">
                 
@@ -14,7 +13,7 @@
                         	</div> 
                         	<div class="col-md-offset-5 col-md-3 pull-right">
                         		<br><br><br>
-                        		<font color="white" size="2px">&nbsp;&nbsp;&nbsp; Join Us On : </font>&nbsp;&nbsp;
+                        		<font color="white" size="2px">&nbsp;&nbsp;&nbsp; Follow us On : </font>&nbsp;&nbsp;
                           		<a href="https://www.facebook.com/Essotglobal" target="_blank"><img src="assets/img/social/FACEBOOK.png" data-toggle="tooltip" data-placement="top" title="Facebook Page"/></a> &nbsp;
                           		<a href="https://twitter.com/essotglobal" target="_blank"><img src="assets/img/social/TWITTER.png" data-toggle="tooltip" data-placement="top" title="Twitter Page"/></a> &nbsp;
                          		<a href="https://youtube.com/" target="_blank"><img src="assets/img/social/YOU_TUBE.png" data-toggle="tooltip" data-placement="top" title="YouTube Page"/></a>
@@ -24,9 +23,7 @@
                 
             </header>
             <!-- /#header -->
-            
-            
-            
+                
             <!-- Navbar Portion-->
 			<header id="navigationbar" class="header"  data-offset-top="10" >
                 <nav class="navigation-header navbar-default" role="navigation" >
@@ -37,67 +34,28 @@
                             </button>
                              </div>
                             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                                <ul class="nav navbar-nav">
+                                <ul class="nav navbar-nav" ng-show='$parent.menuList.menu.length > 0'>
                                     
-                                    <!-- First Tab-->
-                                    <li class="dropdown menulabel"> 
-                                    	<a href="#" data-toggle="dropdown" class="dropdown-toggle" ng-bind='$parent.temp'></a>
-                                        <ul class="dropdown-menu">
-                                        	<li>
-                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Chargers & Readers</a>
-                                        		<ul class="dropdown-menu sub-menu">
-		                                        	<li>
-		                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Datagramz001</a>
+                                    <!-- Tabs -->
+                                    <li ng-repeat-start="menuItem in $parent.menuList.menu" class="dropdown menulabel"> 
+                                    	<a href="#" data-toggle="dropdown" class="dropdown-toggle" ng-bind='menuItem.categoryName'></a>
+                                        <ul class="dropdown-menu" ng-show='menuItem.subCategories.length > 0'>
+                                        	<li ng-repeat-start="subItem in menuItem.subCategories">
+                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle" ng-bind='subItem.categoryName'></a>
+                                        		<ul class="dropdown-menu sub-menu" ng-show='subItem.subCategories.length > 0'>
+		                                        	<li ng-repeat-start="item in subItem.subCategories">
+		                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle" ng-bind='item.categoryName'></a>
 		                                        	</li>
-                                                    <li class="divider"></li>
-		                                        	<li>
-		                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">WarHorsez</a>
-		                                        	</li>
+                                                    <li ng-if="!$last" ng-repeat-end class="divider"></li>
                                         		</ul>
                                         	</li>
-                                            <li class="divider"></li>
-                                        	<li>
-                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">USB Hub</a>
-                                        	</li>
+                                            <li ng-if="!$last" ng-repeat-end class="divider"></li>                                        	
                                         </ul>
                                     </li>
                                     
-                                    <li class="divider-vertical"></li>
-
-                                    <!-- Second Tab-->
-                                    <li class="dropdown menulabel"> 
-                                    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Power GNs</a>
-                                    	<ul class="dropdown-menu">
-                                        	<li>
-                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Power Banks</a>
-                                        	</li>
-                                            <li class="divider"></li>
-                                        	<li>
-                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Charger Case</a>
-                                        	</li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li class="divider-vertical"></li>
-                                    <!-- Third Tab-->
-                                    <li class="dropdown menulabel"> 
-                                    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Audio</a>
-                                    	<ul class="dropdown-menu">
-                                        	<li>
-                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Earphones</a>
-                                        	</li>
-                                            <li class="divider"></li>
-                                        	<li>
-                                        		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Speakers</a>
-                                        	</li>
-                                        </ul>
-                                    </li>
-                                    
-                                </li>
-                                
-                            </ul>
+                                    <li ng-if="!$last" ng-repeat-end class="divider-vertical"></li>
+                                </ul>
                             <!-- /.nav -->
-                            
                             <div class="col-md-offset-5 col-md-3 pull-right" style="padding: 5px 5px 0px 0px;">
                             	<div class="block">
 									<form action="">
