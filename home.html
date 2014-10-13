@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="shortcut icon" href="assets/img/favicon.png">
         
         <title>Electronic | Essot India</title>
         
@@ -34,11 +34,18 @@
 <body>
 
 <!--Header Portion -->
-<div id="headerContent" ng-app="essotHeaderApp" ng-controller="essotHeaderController" ng-include src="'header.html'">
+<div id="headerContent" ng-controller="essotHeaderController" ng-include src="'header.html'">
 </div>
 
+
+
+
 <!-- Body -->
-		<div id='mainContentDiv' ng-controller="essotHomeController">	
+		<div id='mainContentDiv' ng-app="essotApp" ng-controller="essotController">	
+
+             <!-- Social Sticky Sidebar Portion -->
+            <div id="socialContent" ng-include src="'social.html'">
+            </div>
 			<!-- Carousal -->
                 <div class="container" align="center">    
                 <!-- Jssor Slider Begin -->
@@ -58,55 +65,10 @@
 
                     <!-- Slides Container -->
                     <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
-                        <div>
+                        <div ng-repeat="item in displayCatalogues.categories" ng-init="init($last);">
                             <img u="image" src="http://placehold.it/1020x456">
                             <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456" />
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456" />
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456" />
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95"/>
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95" />
-                        </div>
-                        
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95"/>
-                        </div>
-                        <div>
-                            <img u="image" src="http://placehold.it/1020x456"/>
-                            <img u="thumb" src="http://placehold.it/181x95"/>
-                        </div>
+                        </div>                        
                     </div>
         
         
@@ -147,20 +109,10 @@
                         <div class="col-md-6">
                             <section id="feature blue">
                                 
-                                    <div class="slider fadebox">
-                                        <div>
+                                    <div class="slider fadebox fade1">
+                                        <div ng-repeat="item in displayCatalogues.categories" fadebox-init-directive>
                                             <div class="image">
-                                                <img src="http://placehold.it/550x510">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="image">
-                                                 <img src="http://placehold.it/550x510">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="image">
-                                                 <img src="http://placehold.it/550x510">
+                                                <img src="/marketing/image/{{item.categoryName}}.jpg">
                                             </div>
                                         </div>
                                     </div>
@@ -172,22 +124,12 @@
                         <div class="col-md-6">
                               <section id="features blue">
                                 
-                                    <div class="slider fadebox">
-                                        <div>
+                                    <div class="slider fadebox fade2">
+                                        <div ng-repeat="item in displayCatalogues.categories" fadebox-second-init-directive>
                                             <div class="image">
                                                 <img src="http://placehold.it/550x510">
                                             </div>
-                                        </div>
-                                        <div>
-                                            <div class="image">
-                                                <img src="http://placehold.it/550x510">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="image">
-                                                 <img src="http://placehold.it/550x510">
-                                            </div>
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 
                             </section>  
@@ -205,42 +147,9 @@
                             </div>
 
                             <div class="slider responsive">
-                                <div>
+                                <div ng-repeat="item in displayCatalogues.categories" slider-repeat-directive>
                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
-                                <div>
-                                    <a href="#"><img src="http://placehold.it/270x270" class="img-responsive"></a>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </section>
@@ -267,8 +176,6 @@
                 <script src="assets/UItoTop/js/easing.js"></script>
                 <script src="assets/UItoTop/js/jquery.ui.totop.min.js"></script>
                
-                
-
                 <script src="assets/js/common.js"></script>
                 <script type="text/javascript" src="assets/tipuedrop/tipuedrop_content.js"></script>
                 <script type="text/javascript" src="assets/tipuedrop/tipuedrop.js"></script>
@@ -281,13 +188,9 @@
                 <!-- Slick Slider Carousal -->
                 <script type="text/javascript" src="assets/slick/slick.js"></script>    
                 <script type="text/javascript" src="assets/js/jquery.slides.min.js"></script> 
-                <script type="text/javascript" src="assets/js/totop.js"></script>                           
-                                       
+                <script type="text/javascript" src="assets/js/totop.js"></script> 
+                <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
+                <script type="text/javascript" src="assets/js/angular/essot-home.js"></script>
+                <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>                             
 </body>
-    <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="assets/js/angular/essot-home.js"></script>
-    <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
-    <script type="text/javascript">
-            angular.bootstrap(document.getElementById("mainContentDiv"),['essotHomeApp']);
-    </script>
 </html>

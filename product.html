@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <title>Electronic | Essot India</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/UItoTop/css/ui.totop.css" rel="stylesheet">
+    <!-- Custom Stylesheet For This Template -->
+    <link href="assets/css/stylesheet.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Tipuedrop Search Plugin -->
+    <link rel="stylesheet" type="text/css" href="assets/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" type="text/css" href="assets/cloudzoom/cloudzoom.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+
+
+
+</head>
+
+<body>
+
+    <!--Header Portion -->
+    <div id="headerContent" ng-controller="essotHeaderController" ng-include src="'header.html'">
+    </div>
+
+    <!-- Body -->
+     
+    <div id='mainContentDiv' ng-app="essotApp" ng-controller="essotController">
+    <section>
+        <div class="container">
+            <div class="row">
+                
+                    <div class="product-details">
+                    <!--product-details-->
+                        
+
+                        <div class="col-md-6">
+                            
+
+
+
+                        <!-- Product Zoom Plugin : Cloud Zoom -->
+                            <div class="view-product">
+                                <img id="one" src="http://placehold.it/480x380" alt="" />
+                                
+                            </div>
+                            <div id="similar-product" class="carousel slide" data-ride="carousel">
+                                
+                              <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                      <img ng-repeat="image in thumbImages.images" ng-src="/marketing/image/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
+                                    </div>
+                                </div>
+
+                                  <!-- Controls -->
+                                  <a class="left item-control" href="#similar-product" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                  </a>
+                                  <a class="right item-control" href="#similar-product" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                  </a>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+                        <!-- Product Definitions -->
+
+                        <div class="col-md-6">
+                            <div class="product-information"><!--/product-information-->
+                                <h2 ng-bind="productData.details.productDetails.name"></h2>
+                                <p>Product ID: <span ng-bind="productData.details.productDetails.skuName"></span></p>
+                                <!-- <p ng-bind="productData.details.productDetails.description"></p> -->
+                                <span>
+                                   <span ng-bind="productData.details.productDetails.price | currency:'Rs '"></span>
+                                   <!-- <label>Quantity:</label>
+                                    <input type="text" value="3" />
+                                    <button type="button" class="btn btn-fefault cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Add to cart
+                                    </button> -->
+                                </span>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <span id="productoverview">
+                                            Features
+                                            <ul> 
+                                                <li ng-repeat="feature in productData.details.features" ng-bind="feature.featureValue"></li>
+                                            </ul>
+
+                                        </span>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <span id="productspecs">
+                                            Product Specifications
+                                            <ul> 
+                                                <li ng-repeat="spec in productData.details.specs" ng-bind="getStrSpecValue(spec.techKey,spec.techValue)"></li>
+                                            </ul>
+
+                                        </span>
+                                    </div>    
+                                </div>
+
+                                <br><br>
+                               <!-- <button type="button" class="btn btn-fefault cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Add to cart
+                                </button> -->
+                                <a href=""><img src="assets/img/product-details/share.png" class="share img-responsive"  alt="" /></a>
+                            </div><!--/product-information-->
+                        </div>
+                    </div><!--/product-details-->
+                </div> <!-- Row Ends Here -->    
+
+
+                <div class="row">
+                    <div class="category-tab shop-details-tab"><!--category-tab-->
+                        
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+                                <li><a href="#features" data-toggle="tab">Features</a></li>
+                                <li><a href="#specification" data-toggle="tab">Product Specifications</a></li>
+                            </ul>
+                        
+
+                        <div class="tab-content">
+                            
+
+
+                            <div class="tab-pane fade active in" id="overview" >
+                                
+                                <p><h3>Overview</h3>
+                                <span ng-bind="productData.details.productDetails.longDescription"> </span></p>
+                            </div>
+                            
+
+                            <div class="tab-pane fade in" id="features" >
+                               
+                             <p>
+                                 <h3>Features</h3>
+                                 <span ng-repeat-start="feature in productData.details.features" ng-bind="feature.featureValue"></span>
+                                 <span ng-repeat-end="feature in productData.details.features"></br></span>
+                             </p>
+                                    
+                             </div>
+
+                            <div class="tab-pane fade in" id="specification" >
+                               
+                             <p>
+                                 <h3>Product Specifications</h3>
+                                 <span ng-repeat-start="spec in productData.details.specs" ng-bind="getStrSpecValue(spec.techKey,spec.techValue)"></span>
+                                 <span ng-repeat-end="spec in productData.details.specs"></br></span>
+                             </p>
+                                    
+                             </div>
+                            
+                        </div>
+
+                        </div>
+                    </div><!--/category-tab-->
+                                        
+                    
+                    <div class="recommended_items"><!--recommended_items-->
+                        <h2 class="title text-center">Recommended items</h2>
+                        
+                        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">   
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="http://placehold.it/310x150" alt="" />
+                                                    <h3>Rs. 800</h3>
+                                                    <p>Product A</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="http://placehold.it/310x150" alt="" />
+                                                    <h3>Rs. 500</h3>
+                                                    <p>Product B</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="http://placehold.it/310x150" alt="" />
+                                                    <h3>Rs. 999</h3>
+                                                    <p>Product C</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">  
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="http://placehold.it/310x150" alt="" />
+                                                    <h3>Rs. 750</h3>
+                                                    <p>Product D</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="http://placehold.it/310x150" alt="" />
+                                                    <h3>Rs. 1500</h3>
+                                                    <p>Product E</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="http://placehold.it/310x150" alt="" />
+                                                    <h3>Rs. 20000</h3>
+                                                    <p>Product F</p>
+                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                              </a>
+                              <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                              </a>          
+                        </div>
+                    </div><!--/recommended_items-->
+
+
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div id='mainContentDiv' ng-controller="essotHomeController">
+
+    <!-- Social Sticky Sidebar Portion -->
+            <div id="socialContent" ng-include src="'social.html'">
+            </div>
+
+    <!-- Footer Portion-->
+
+            <div id="footerContent" ng-include src="'footer.html'"></div>
+
+            <!-- Modal Windows Portion-->
+
+            <div id="aboutUsContent" ng-include src="'aboutus.html'"></div>
+            <div id="contactUsContent" ng-include src="'contactus.html'"></div>
+            <div id="privacyPolicyContent" ng-include src="'privacypolicy.html'"></div>
+            <div id="tnCContent" ng-include src="'termsandconditions.html'"></div>
+
+    </div>
+
+    <!-- Bootstrap JS & Others JavaScript Plugins
+                ================================================== -->
+    <!-- Placed At The End Of The Document So Page Loads Faster -->
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/UItoTop/js/easing.js"></script>
+    <script src="assets/UItoTop/js/jquery.ui.totop.min.js"></script>
+    <script src="assets/cloudzoom/cloudzoom.js"  type="text/javascript"></script>
+
+    <script src="assets/js/common.js"></script>
+    <script type="text/javascript" src="assets/tipuedrop/tipuedrop_content.js"></script>
+    <script type="text/javascript" src="assets/tipuedrop/tipuedrop.js"></script>
+    <!-- Slick Slider Carousal -->
+    <script type="text/javascript" src="assets/slick/slick.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="assets/js/totop.js"></script>
+   
+    <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular/essot-product.js"></script>
+    <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
+
+</body>
+
+</html>

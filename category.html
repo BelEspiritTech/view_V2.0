@@ -33,21 +33,23 @@
 <body>
 
     <!--Header Portion -->
-    <div id="headerContent" ng-app="essotHeaderApp" ng-controller="essotHeaderController" ng-include src="'header.html'">
+    <div id="headerContent" ng-controller="essotHeaderController" ng-include src="'header.html'">
     </div>
 
     <!-- Body -->
     
-    <div id='mainContentDiv' ng-controller="essotCategoryController">
+    <div id='mainContentDiv' ng-app="essotApp" ng-controller="essotController">
 
+     <!-- Social Sticky Sidebar Portion -->
+            <div id="socialContent" ng-include src="'social.html'">
+            </div>
+
+            
     <!-- Carousal -->
 
     <div class="container">
         <div id="slides">
-            <img u="image" src="http://placehold.it/1020x456">
-            <img u="image" src="http://placehold.it/1020x456">
-            <img u="image" src="http://placehold.it/1020x456">
-            <img u="image" src="http://placehold.it/1020x456">
+            <img ng-repeat="slideItem in productData.bannerList" u="image" ng-src="/marketing/image/{{slideItem}}/{{slideItem}}_banner.jpg" slide-repeat-directive>
             <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="fa-chevron-left icon-large"></i></a>
             <a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa-chevron-right icon-large"></i></a>
         </div>
@@ -73,19 +75,20 @@
                           <br>  
 
 
-                        <div class="col-sm-4">
-                            <a href="#">
+                        <div ng-repeat="productItem in productData.products" class="col-sm-4">
+                            <a href="product.html">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     
                                     <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #001</h3>
+                                        <!--<img u="image" ng-src="http://placehold.it/270x250"/> -->
+                                        <img u="image" ng-src="/marketing/image/{{productItem.skuName}}/{{productItem.skuName}}_medium.jpg"/>
+                                        <h3 ng-bind="productItem.name"></h3>
                                     </div>
                                     
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <h2>Rs 1000</h2>
+                                            <h2 ng-bind="productItem.price  | currency:'Rs '"></h2>
                                             <p class="product-overview">
                                                     &bull; This is an amazing product <br>
                                                     &bull;  Super awesome stuffs 
@@ -93,154 +96,12 @@
                                             <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
                                         </div>
                                     </div>
-
+                                    <!--<img src="assets/img/new.png" class="new" alt="" />
+                                    <img src="assets/img/sale.png" class="new" alt="" /> -->
                                 </div>
                             </div>
                             </a>
                         </div>
-
-
-
-                        <div class="col-sm-4">
-                            <a href="#">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #002</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 800</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-
-                        <div class="col-sm-4">
-                            <a href="#">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #003</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 1200</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-                        <div class="col-sm-4">
-                            <a href="#">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #004</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 1800</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-                                    <img src="assets/img/new.png" class="new" alt="" />
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-                        <div class="col-sm-4">
-                            <a href="#">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #005</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 980</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-                                    <img src="assets/img/sale.png" class="new" alt="" />
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-
-
-
-                        <div class="col-sm-4">
-                            <a href="#">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #006</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 2000</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-
 
                         </div>
                         <!--features_items-->
@@ -251,10 +112,6 @@
                 </div>
             </div>
     </section>
-
-
-
-
 
 
     <!-- Footer Portion-->
@@ -278,7 +135,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/UItoTop/js/easing.js"></script>
     <script src="assets/UItoTop/js/jquery.ui.totop.min.js"></script>
-
+    
     <script src="assets/js/common.js"></script>
     <script type="text/javascript" src="assets/tipuedrop/tipuedrop_content.js"></script>
     <script type="text/javascript" src="assets/tipuedrop/tipuedrop.js"></script>
@@ -286,14 +143,9 @@
     <script type="text/javascript" src="assets/slick/slick.js"></script>
     <script type="text/javascript" src="assets/js/jquery.slides.min.js"></script>
     <script type="text/javascript" src="assets/js/totop.js"></script>
-   
+
     <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-category.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
-    <script type="text/javascript">
-            angular.bootstrap(document.getElementById("mainContentDiv"),['essotCatApegoryp']);
-    </script>
-
 </body>
-
 </html>
