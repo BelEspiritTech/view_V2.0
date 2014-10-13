@@ -50,8 +50,8 @@
                             <!-- /.nav -->
                             <div class="col-md-offset-5 col-md-3 pull-right" style="padding: 5px 5px 0px 0px;">
                             	<div class="block">
-									<form action="">
-									<input type="text" placeholder="Search EssotGlobal" id="tipue_drop_input" autocomplete="off" required>
+									<form ng-submit="search()">
+									   <input type="text" ng-model="$parent.searchText" placeholder="Search EssotGlobal" id="tipue_drop_input" autocomplete="off" required>
 									</form>
 								<div id="tipue_drop_content"></div>
                             </div>

@@ -33,12 +33,12 @@
 <body>
 
     <!--Header Portion -->
-    <div id="headerContent" ng-app="essotHeaderApp" ng-controller="essotHeaderController" ng-include src="'header.html'">
+    <div id="headerContent" ng-controller="essotHeaderController" ng-include src="'header.html'">
     </div>
 
     <!-- Body -->
     
-    <div id='mainContentDiv' ng-controller="essotHomeController">
+    <div id='mainContentDiv' ng-app="essotApp" ng-controller="essotController">
 
          <!-- Social Sticky Sidebar Portion -->
             <div id="socialContent" ng-include src="'social.html'">
@@ -48,7 +48,7 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12"> 
-            <h2>Search : abcdxyz</h2>
+            <h2>Search : <span ng-bind="searchText"></span></h2>
         </div>
         <div class="col-md-12"> 
             <h4> 9 matched items</h4>
@@ -288,12 +288,8 @@
     <script type="text/javascript" src="assets/js/totop.js"></script>
    
     <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="assets/js/angular/essot-home.js"></script>
+    <script type="text/javascript" src="assets/js/angular/essot-search.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
-    <script type="text/javascript">
-            angular.bootstrap(document.getElementById("mainContentDiv"),['essotHomeApp']);
-    </script>
-
 </body>
 
 </html>
