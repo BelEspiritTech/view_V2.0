@@ -48,10 +48,10 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12"> 
-            <h2>Search : <span ng-bind="searchText"></span></h2>
+            <h2>Search : <span ng-bind="searchText || 'undefined'"></span></h2>
         </div>
         <div class="col-md-12"> 
-            <h4> <span ng-bind="data.result.length"></span> matched items</h4>
+            <h4> <span ng-bind="data.result.length || 0"></span> matched items</h4>
         </div>
     </div>    
     </div>
