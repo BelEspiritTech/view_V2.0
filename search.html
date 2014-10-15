@@ -51,7 +51,7 @@
             <h2>Search : <span ng-bind="searchText"></span></h2>
         </div>
         <div class="col-md-12"> 
-            <h4> 9 matched items</h4>
+            <h4> <span ng-bind="data.result.length"></span> matched items</h4>
         </div>
     </div>    
     </div>
@@ -73,19 +73,19 @@
                           <br>  
 
 
-                        <div class="col-sm-4">
+                        <div ng-repeat="product in data.result" class="col-sm-4">
                             <a href="product.html">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     
                                     <div class="productinfo text-center">
                                         <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #001</h3>
+                                        <h3 ng-bind="product.productDetails.name"></h3>
                                     </div>
                                     
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <h2>Rs 1000</h2>
+                                            <h2 ng-bind="product.productDetails.price | currency:'Rs '""></h2>
                                             <p class="product-overview">
                                                     &bull; This is an amazing product <br>
                                                     &bull;  Super awesome stuffs 
@@ -98,149 +98,6 @@
                             </div>
                             </a>
                         </div>
-
-
-
-                        <div class="col-sm-4">
-                            <a href="product.html">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #002</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 800</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-
-                        <div class="col-sm-4">
-                            <a href="product.html">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #003</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 1200</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-                        <div class="col-sm-4">
-                            <a href="product.html">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #004</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 1800</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-                                    <img src="assets/img/new.png" class="new" alt="" />
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-                        <div class="col-sm-4">
-                            <a href="product.html">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #005</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 980</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-                                    <img src="assets/img/sale.png" class="new" alt="" />
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-
-
-
-                        <div class="col-sm-4">
-                            <a href="product.html">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    
-                                    <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
-                                        <h3>Product #006</h3>
-                                    </div>
-                                    
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>Rs 2000</h2>
-                                                <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
-                                                </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-
-
-
 
                         </div>
                         <!--features_items-->
