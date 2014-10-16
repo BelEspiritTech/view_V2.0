@@ -2,7 +2,7 @@ var essotApp = angular.module('essotApp', []);
 
 essotApp.controller('essotController', function($scope, $http, $location) {
 
-	$http.get('http://122.160.164.121:8080/essotg/rest/category/all')
+	$http.get('http://122.160.164.121:8090/essotg/rest/category/all')
 	.success(function(data) {
 		$scope.loaded = true;
 		$scope.displayCatalogues = data;
