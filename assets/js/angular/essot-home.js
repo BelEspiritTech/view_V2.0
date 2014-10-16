@@ -2,10 +2,10 @@ var essotApp = angular.module('essotApp', []);
 
 essotApp.controller('essotController', function($scope, $http, $location) {
 
-	$http.get('http://122.160.164.121:8090/essotg/rest/category/all')
+	$http.get('http://122.160.164.121:8090/essotg/rest/category/home')
 	.success(function(data) {
 		$scope.loaded = true;
-		$scope.displayCatalogues = data;
+		$scope.displayItems = data;
 
 	}).error(function(err) {
 		console.log(err);
