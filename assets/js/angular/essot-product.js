@@ -3,7 +3,7 @@ var essotApp = angular.module('essotApp', []);
 essotApp.controller('essotController', function($scope, $http, $location) {
 
  var skuName = "PowerHorsez10000";
- var url = "http://122.160.164.121:8080/essotg/rest/product/detail/" + skuName;
+ var url = "http://122.160.164.121:8090/essotg/rest/product/detail/" + skuName;
  var imageJsonPath = "../../marketing/image/"+skuName+"/images.json" ;
  $scope.productData = [];
  $scope.thumbImages = [];
