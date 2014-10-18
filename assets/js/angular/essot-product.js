@@ -13,6 +13,8 @@ $http.get(url)
 			$scope.loaded = true;
 			$scope.productData = data;
 
+			$scope.relatedSkuLoops = Math.ceil($scope.productData.details.relatedskus.length/3);
+
 			$http.get(imageJsonPath)
 				 .success(function(data) {
 					$scope.thumbImages = data;
@@ -28,7 +30,7 @@ $http.get(url)
 									zoomOffsetY : 25,
 									zoomImage : "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 
-					angular.element(document.querySelector('#one')).CloudZoom(options); 
+					angular.element(document.querySelector('#one')).CloudZoom(options); 					
 			
 				}).error(function(err) {
 					console.log(err);
@@ -58,4 +60,13 @@ $scope.getStrSpecValue = function(data1,data2){
           return data1+ " : " +data2;
 };
 
+});
+
+essotApp.filter('range', function() {
+  return function(val, range) {
+    range = parseInt(range);
+    for (var i=0; i<range; i++)
+      val.push(i);
+    return val;
+  };
 });

@@ -193,82 +193,20 @@
                         
                         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="item active">   
-                                    <div class="col-sm-4">
+                                <div ng-repeat="n in [] | range:relatedSkuLoops" class="item" ng-class="{active : $first}">   
+                                    <div ng-repeat="product in productData.details.relatedskus | limitTo: - (productData.details.relatedskus.length - (n * 3)) | limitTo : 3" class="col-sm-4">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
                                                     <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3>Rs. 800</h3>
-                                                    <p>Product A</p>
+                                                    <h3 ng-bind="product.relProdPrice| currency:'Rs '"></h3>
+                                                    <p ng-bind="product.relProdName"></p>
                                                     <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3>Rs. 500</h3>
-                                                    <p>Product B</p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3>Rs. 999</h3>
-                                                    <p>Product C</p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">  
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3>Rs. 750</h3>
-                                                    <p>Product D</p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3>Rs. 1500</h3>
-                                                    <p>Product E</p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3>Rs. 20000</h3>
-                                                    <p>Product F</p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </div>                                   
+                               </div>                               
                             </div>
                              <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
                                 <i class="fa fa-angle-left"></i>
