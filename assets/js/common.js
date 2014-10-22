@@ -7,6 +7,7 @@ tpj.noConflict();
 tpj(document).ready(function() {
    
     angular.bootstrap(document.getElementById("headerContent"),['essotHeaderApp']);  
+    angular.bootstrap(document.getElementById("titleContent"),['essotTitleApp']);
     
     tpj('#tipue_drop_input').tipuedrop();
 

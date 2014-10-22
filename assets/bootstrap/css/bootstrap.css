@@ -3339,7 +3339,7 @@ input[type="button"].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 90%;  /* had to tweak for the forced changes in the navbar height from bootstrap*/
   left: 0;
   z-index: 1000;
   display: none;
@@ -3376,7 +3376,7 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #7b8a8b;
+  color: #000000;
   white-space: nowrap;
 }
 
@@ -4595,7 +4595,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 19.5px;
+    padding-top: 15px;
     padding-bottom: 19.5px;
   }
 }
@@ -4723,22 +4723,22 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #18bc9c;
-  background-color: transparent;
+  color: #ffffff ;
+  /*background-color: transparent;*/
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555555;
-  background-color: transparent;
+  color: #ffffff ;
+  /*background-color: transparent;*/
 }
 
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
-  background-color: transparent;
+  color: #ffffff ;
+  /*background-color: transparent;*/
 }
 
 .navbar-default .navbar-toggle {
@@ -6055,7 +6055,7 @@ body.modal-open,
 
 .modal-header {
   min-height: 16.428571429px;
-  padding: 15px;
+  padding: 10px;
   /*border-bottom: 1px solid #e5e5e5;*/
   background-color: #820024;
 }
@@ -6068,6 +6068,7 @@ body.modal-open,
   margin: 0;
   line-height: 1.428571429;
   color: white;
+  padding: 0px 0px 0px 20px;
 }
 
 .modal-body {
@@ -6076,8 +6077,8 @@ body.modal-open,
 }
 
 .modal-footer {
-  padding: 19px 20px 20px;
-  margin-top: 15px;
+  padding: 10px 20px 10px;
+  /*margin-top: 15px;*/
   text-align: right;
   border-top: 1px solid #e5e5e5;
   background-color: #820024;

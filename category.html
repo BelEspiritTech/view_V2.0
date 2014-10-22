@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <title>Electronic | Essot India</title>
+    <title id="titleContent" ng-controller="essotTitleController" ng-bind="pageTitle"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -88,7 +88,7 @@
                                     
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <h2 ng-bind="productItem.price  | currency:'Rs '"></h2>
+                                            <h2 style="font-family:rupee;font-size:20px" ng-bind="productItem.price  | currency:'R '"></h2>
                                             <p class="product-overview">
                                                     &bull; This is an amazing product <br>
                                                     &bull;  Super awesome stuffs 
@@ -147,5 +147,6 @@
     <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-category.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
+    <script type="text/javascript" src="assets/js/angular/essot-title.js"></script>
 </body>
 </html>

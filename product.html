@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <title>Electronic | Essot India</title>
+    <title id="titleContent" ng-controller="essotTitleController" ng-bind="pageTitle"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -87,7 +87,7 @@
                                 <p>Product ID: <span ng-bind="productData.details.productDetails.skuName"></span></p>
                                 <!-- <p ng-bind="productData.details.productDetails.description"></p> -->
                                 <span>
-                                   <span ng-bind="productData.details.productDetails.price | currency:'Rs '"></span>
+                                   <span style="font-family:rupee;font-size:20px" ng-bind="productData.details.productDetails.price | currency:'R '"></span>
                                    <!-- <label>Quantity:</label>
                                     <input type="text" value="3" />
                                     <button type="button" class="btn btn-fefault cart">
@@ -99,7 +99,7 @@
                                     <div class="col-md-5">
                                         <span id="productoverview">
                                             Features
-                                            <ul> 
+                                            <ul class="features-points"> 
                                                 <li ng-repeat="feature in productData.details.features" ng-bind="feature.featureValue"></li>
                                             </ul>
 
@@ -108,7 +108,7 @@
                                     <div class="col-md-7">
                                         <span id="productspecs">
                                             Product Specifications
-                                            <ul> 
+                                            <ul class="specs-points"> 
                                                 <li ng-repeat="spec in productData.details.specs" ng-bind="getStrSpecValue(spec.techKey,spec.techValue)"></li>
                                             </ul>
 
@@ -154,8 +154,12 @@
                                
                              <p>
                                  <h3>Features</h3>
-                                 <span ng-repeat-start="feature in productData.details.features" ng-bind="feature.featureValue"></span>
-                                 <span ng-repeat-end="feature in productData.details.features"></br></span>
+                                 <ul class="productdescbullets">
+                                    <li ng-repeat="feature in productData.details.features" ng-bind="feature.featureValue"></li>
+                                 </ul>
+
+                                  <!-- <span ng-repeat-start="feature in productData.details.features" ng-bind="feature.featureValue"></span>
+                                  <span ng-repeat-end="feature in productData.details.features"></br></span> -->
                              </p>
                                     
                              </div>
@@ -164,8 +168,11 @@
                                
                              <p>
                                  <h3>Product Specifications</h3>
-                                 <span ng-repeat-start="spec in productData.details.specs" ng-bind="getStrSpecValue(spec.techKey,spec.techValue)"></span>
-                                 <span ng-repeat-end="spec in productData.details.specs"></br></span>
+                                 <ul class="productdescbullets">
+                                    <li ng-repeat="spec in productData.details.specs" ng-bind="getStrSpecValue(spec.techKey,spec.techValue)"></li>
+                                 </ul>
+                                 <!-- <span ng-repeat-start="spec in productData.details.specs" ng-bind="getStrSpecValue(spec.techKey,spec.techValue)"></span>
+                                 <span ng-repeat-end="spec in productData.details.specs"></br></span> -->
                              </p>
                                     
                              </div>
@@ -177,7 +184,7 @@
                                         
                     
                     <div class="recommended_items"><!--recommended_items-->
-                        <h2 class="title text-center">Recommended items</h2>
+                        <h2 class="title text-center">You may also like</h2>
                         
                         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
@@ -187,7 +194,7 @@
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
                                                     <img src="http://placehold.it/310x150" alt="" />
-                                                    <h3 ng-bind="product.relProdPrice| currency:'Rs '"></h3>
+                                                    <h3 style="font-family:rupee;font-size:20px" ng-bind="product.relProdPrice| currency:'R '" ></h3>
                                                     <p ng-bind="product.relProdName"></p>
                                                     <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                                 </div>
@@ -245,7 +252,7 @@
     <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-product.js"></script>
     <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
-
+    <script type="text/javascript" src="assets/js/angular/essot-title.js"></script>
 </body>
 
 </html>

@@ -34,7 +34,7 @@ h2.title {
 .productinfo h3{
 	color: #820024;
 	font-family: 'Roboto', sans-serif;
-	font-size: 26px;
+	font-size: 22px;
 	font-weight: 700;
 }
 .product-overlay h2{
@@ -105,17 +105,6 @@ h2.title {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*************************
 ******* Home ******
 **************************/
@@ -127,7 +116,7 @@ h2.title {
 .category-tab ul {
   background: #40403E;
   border-bottom: 1px solid #820024;
-  list-style: none outside none;
+  /*list-style: none outside none;*/
   margin: 0 0 30px;
   padding: 0;
   width: 100%;
