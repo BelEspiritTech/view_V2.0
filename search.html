@@ -72,20 +72,20 @@
                             </div>
                           <br>  
 
-
                         <div ng-repeat="product in data.result" class="col-sm-4">
                             <a href="product.html">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     
                                     <div class="productinfo text-center">
-                                        <img u="image" src="http://placehold.it/270x250"/>
+                                        <!--<img u="image" ng-src="http://placehold.it/270x250"/> -->
+                                        <img u="image" ng-src="/marketing/image/{{product.productDetails.skuName}}/{{product.productDetails.skuName}}_medium.jpg"/>
                                         <h3 ng-bind="product.productDetails.name"></h3>
                                     </div>
                                     
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <h2 style="font-family:rupee;font-size:20px" ng-bind="product.productDetails.price | currency:'R '""></h2>
+                                            <h2 style="font-family:rupee;font-size:20px" ng-bind="product.productDetails.price  | currency:'R '"></h2>
                                             <p class="product-overview">
                                                     &bull; This is an amazing product <br>
                                                     &bull;  Super awesome stuffs 
@@ -93,13 +93,15 @@
                                             <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
                                         </div>
                                     </div>
-
+                                    <!--<img src="assets/img/new.png" class="new" alt="" />
+                                    <img src="assets/img/sale.png" class="new" alt="" /> -->
                                 </div>
                             </div>
                             </a>
                         </div>
 
-                        </div>
+
+                      </div>
                         <!--features_items-->
 
 

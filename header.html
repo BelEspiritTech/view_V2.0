@@ -1,75 +1,90 @@
 <div id="utter-wrapper">
-            <div class="page-mask">
-       
+    <div class="page-mask">
+
+    </div>
+
+    <!-- Header Portion -->
+    <header id="header" class="header" data-offset-top="10">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="navbar-brand" href="home.html">
+                        <img src="assets/img/brand/logo1.png">
+                    </a>
+                </div>
+                <div class="col-md-offset-5 col-md-3 pull-right">
+                    <br>
+                    <br>
+                    <font color="white" size="2px">&nbsp;&nbsp;&nbsp; Join Us On :</font>&nbsp;&nbsp;
+                    <a href="https://www.facebook.com/Essotglobal" target="_blank">
+                        <img src="assets/img/social/FACEBOOK.png" data-toggle="tooltip" data-placement="top" title="Facebook Page" />
+                    </a>&nbsp;
+                    <a href="https://twitter.com/essotglobal" target="_blank">
+                        <img src="assets/img/social/TWITTER.png" data-toggle="tooltip" data-placement="top" title="Twitter Page" />
+                    </a>&nbsp;
+                    <a href="https://youtube.com/" target="_blank">
+                        <img src="assets/img/social/YOU_TUBE.png" data-toggle="tooltip" data-placement="top" title="YouTube Page" />
+                    </a>
+                </div>
             </div>
-            
-      		<!-- Header Portion -->
-            <header id="header" class="header" data-offset-top="10">
-                
-                    <div class="container">
-                    	<div class="row">
-                    		<div class="col-md-4">
-                        		<a class="navbar-brand" href="home.html"><img src="assets/img/brand/logo1.png" ></a>
-                        	</div> 
-                        	<div class="col-md-offset-5 col-md-3 pull-right">
-                             <br><br>
-                                <font color="white" size="2px">&nbsp;&nbsp;&nbsp; Join Us On : </font>&nbsp;&nbsp;
-                                <a href="https://www.facebook.com/Essotglobal" target="_blank"><img src="assets/img/social/FACEBOOK.png" data-toggle="tooltip" data-placement="top" title="Facebook Page"/></a> &nbsp;
-                                <a href="https://twitter.com/essotglobal" target="_blank"><img src="assets/img/social/TWITTER.png" data-toggle="tooltip" data-placement="top" title="Twitter Page"/></a> &nbsp;
-                                <a href="https://youtube.com/" target="_blank"><img src="assets/img/social/YOU_TUBE.png" data-toggle="tooltip" data-placement="top" title="YouTube Page"/></a>   
-                            </div> 
-                         </div> 
-                    </div>
-                
-            </header>
-            <!-- /#header -->
-                
-            <!-- Navbar Portion-->
-			<header id="navigationbar" class="header"  data-offset-top="10" >
-                <nav class="navigation-header navbar-default" role="navigation" >
-                    <div class="container">
+        </div>
+
+    </header>
+    <!-- /#header -->
+
+    <!-- Navbar Portion-->
+    <header id="navigationbar" class="header" data-offset-top="10">
+        <nav class="navigation-header navbar-default" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
-                            	<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
                             </button>
-                             </div>
-                            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                                <ul class="nav navbar-nav" ng-show='$parent.menuList.menu.length > 0'>                                    
-                                    <!-- Tabs -->
-                                    <li ng-repeat-start="menuItem in $parent.menuList.menu" class="dropdown menulabel"> 
-                                    	<a href="category.html"  class="dropdown-toggle" ng-bind='menuItem.categoryName'></a>
-                                        <ul class="dropdown-menu" ng-show='menuItem.subCategories.length > 0'>
-                                        	<li ng-repeat-start="subItem in menuItem.subCategories">
-                                        		<a href="category.html"  class="dropdown-toggle" ng-bind='subItem.categoryName'></a>
-                                        		<ul class="dropdown-menu sub-menu" ng-show='subItem.subCategories.length > 0'>
-		                                        	<li ng-repeat-start="item in subItem.subCategories">
-		                                        		<a href="category.html"  class="dropdown-toggle" ng-bind='item.categoryName'></a>
-		                                        	</li>
-                                                    <li ng-if="!$last" ng-repeat-end class="divider"></li>
-                                        		</ul>
-                                        	</li>
-                                            <li ng-if="!$last" ng-repeat-end class="divider"></li>                                        	
-                                        </ul>
-                                    </li>                                    
-                                    <li ng-if="!$last" ng-repeat-end class="divider-vertical"></li>
-                                </ul>
-                            <!-- /.nav -->
-                            <div class="col-md-offset-5 col-md-3 pull-right" style="padding: 4px 5px 0px 0px;">
-                            	<div class="block">
-									<form ng-submit="search()">
-									   <input type="text" ng-model="$parent.searchText" placeholder="Search EssotGlobal" id="tipue_drop_input" autocomplete="off" required>
-									</form>
-								<div id="tipue_drop_content"></div>
-                            </div>
-                            
+                            </button>
                         </div>
-                        <!-- /.navbar-collapse -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav" ng-show='$parent.menuList.menu.length > 0'>
+                                <!-- Tabs -->
+                                <li ng-repeat-start="menuItem in $parent.menuList.menu" class="dropdown menulabel">
+                                    <a href="category.html" class="dropdown-toggle" ng-bind='menuItem.categoryName'></a>
+                                    <ul class="dropdown-menu" ng-show='menuItem.subCategories.length > 0'>
+                                        <li ng-repeat-start="subItem in menuItem.subCategories">
+                                            <a href="category.html" class="dropdown-toggle" ng-bind='subItem.categoryName'></a>
+                                            <ul class="dropdown-menu sub-menu" ng-show='subItem.subCategories.length > 0'>
+                                                <li ng-repeat-start="item in subItem.subCategories">
+                                                    <a href="category.html" class="dropdown-toggle" ng-bind='item.categoryName'></a>
+                                                </li>
+                                                <li ng-if="!$last" ng-repeat-end class="divider"></li>
+                                            </ul>
+                                        </li>
+                                        <li ng-if="!$last" ng-repeat-end class="divider"></li>
+                                    </ul>
+                                </li>
+                                <li ng-if="!$last" ng-repeat-end class="divider-vertical"></li>
+                            </ul>
+                            <!-- /.nav -->
+                        </div>
                     </div>
-                    <!-- /.container -->
-                </nav>
-                <!-- /.navbar -->                
-            </header>
-            <!-- /#header -->       
+                    <div class="col-md-offset-4 col-md-3 pull-right" style="padding: 4px 5px 0px 0px;">
+                        <div class="block">
+                            <form ng-submit="search()">
+                                <input type="text" ng-model="$parent.searchText" placeholder="Search EssotGlobal" id="tipue_drop_input" autocomplete="off" required>
+                            </form>
+                            <div id="tipue_drop_content"></div>
+                        </div>
 
+                    </div>
 
-
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+    </header>
+    <!-- /#header -->

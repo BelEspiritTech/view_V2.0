@@ -75,7 +75,7 @@
                           <br>  
 
 
-                        <div ng-repeat="productItem in productData.products" class="col-sm-4">
+                        <div ng-repeat="productItem in productData.products" class="col-sm-4" style="padding: 0px 2px 0px 2px;">
                             <a href="product.html">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -83,7 +83,7 @@
                                     <div class="productinfo text-center">
                                         <!--<img u="image" ng-src="http://placehold.it/270x250"/> -->
                                         <img u="image" ng-src="/marketing/image/{{productItem.skuName}}/{{productItem.skuName}}_medium.jpg"/>
-                                        <h3 ng-bind="productItem.name"></h3>
+                                        <p ng-bind="productItem.name"></p>
                                     </div>
                                     
                                     <div class="product-overlay">
