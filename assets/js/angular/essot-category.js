@@ -23,7 +23,7 @@ essotApp.controller('essotController', function($scope, $http, $location) {
 
 essotApp.directive('slideRepeatDirective', function() {
   return function(scope, element, attrs) {
-    if (scope.$last){
+    if (scope.$last && scope.$index != 0){
       angular.element(document.querySelector('#slides')).slidesjs({
 	            width: 1020,
 	            height: 456,
