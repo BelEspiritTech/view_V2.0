@@ -63,7 +63,7 @@
                               <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                      <img ng-repeat="image in thumbImages.images" ng-src="/marketing/image/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
+                                      <img ng-repeat="image in thumbImages.images" ng-src="http://placehold.it/85x85" ng-mouseover="toggleEnCode($index)" alt="">
                                     </div>
                                 </div>
 
@@ -193,7 +193,7 @@
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <a href="product.html" target="_self">
+                                                    <a ng-href="product.html#/{{product.relSKU}}" ng-click="goToProduct(product)">
                                                         <img src="http://placehold.it/310x150" alt="" />
                                                     </a>
                                                     <h3 style="font-family:rupee;font-size:20px" ng-bind="product.relProdPrice| currency:'R '" ></h3>

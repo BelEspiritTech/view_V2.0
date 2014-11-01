@@ -65,7 +65,7 @@
                     <!-- Slides Container -->
                     <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
                         <div ng-repeat="item in displayItems.categories" ng-init="init($last);">
-                            <a u="image" href="category.html">
+                            <a u="image" href="category.html#/{{item.categoryID}}">
                                 <img u="image" src="http://placehold.it/1020x456">
                             </a>
                             <img u="thumb" src="http://placehold.it/240x95" />
@@ -113,7 +113,7 @@
                                     <div class="slider fadebox fade1">
                                         <div ng-repeat="item in displayItems.topProducts | limitTo:6 | limitTo : 3" fadebox-init-directive>
                                             <div class="image">
-                                                <a href="product.html"><img src="http://placehold.it/550x510"></a>
+                                                <a href="product.html#/{{item.skuName}}"><img src="http://placehold.it/550x510"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -128,7 +128,7 @@
                                     <div class="slider fadebox fade2">
                                         <div ng-repeat="item in displayItems.topProducts | limitTo:6 | limitTo:-3" fadebox-second-init-directive>
                                             <div class="image">
-                                                <a href="product.html"><img src="http://placehold.it/550x510"></a>
+                                                <a href="product.html#/{{item.skuName}}"><img src="http://placehold.it/550x510"></a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -149,7 +149,7 @@
 
                             <div class="slider responsive">
                                 <div ng-repeat="item in displayItems.topProducts | limitTo:10" slider-repeat-directive>
-                                    <a href="product.html">
+                                    <a href="product.html#/{{item.skuName}}">
                                         <img src="http://placehold.it/270x270" class="img-responsive">
                                     </a>
                                 </div>                                

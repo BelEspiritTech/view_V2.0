@@ -19,7 +19,7 @@ $http.get(url)
 				 .success(function(data) {
 					$scope.thumbImages = data;
 					
-					var imageBreak = $scope.thumbImages.images[0].split('_');
+					/*var imageBreak = $scope.thumbImages.images[0].split('_');
 					var largeImage = "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
 					var XlargeImage = "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg";
 
@@ -30,7 +30,7 @@ $http.get(url)
 									zoomOffsetY : 25,
 									zoomImage : "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 
-					angular.element(document.querySelector('#one')).CloudZoom(options); 					
+					angular.element(document.querySelector('#one')).CloudZoom(options); */					
 			
 				}).error(function(err) {
 					console.log(err);
@@ -41,7 +41,7 @@ $http.get(url)
 });
 
 $scope.toggleEnCode = function(data) {
-		var imageBreak = $scope.thumbImages.images[data].split('_');
+		/*var imageBreak = $scope.thumbImages.images[data].split('_');
 		var largeImage = "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
 		
 		angular.element(document.querySelector('#one')).data('CloudZoom').destroy();
@@ -52,12 +52,18 @@ $scope.toggleEnCode = function(data) {
 		 
 		
 		angular.element(document.querySelector('#one')).attr("src",largeImage);
-		angular.element(document.querySelector('#one')).CloudZoom(options);  
+		angular.element(document.querySelector('#one')).CloudZoom(options);  */
 		
 };
     
 $scope.getStrSpecValue = function(data1,data2){
           return data1+ " : " +data2;
+};
+
+$scope.goToProduct = function(data) {
+	var url = "product.html#/"+data.relSKU;
+	window.location.href = url; 
+	window.location.reload(false);
 };
 
 });

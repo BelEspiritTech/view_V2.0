@@ -50,7 +50,7 @@
     <div class="container">
         <div id="slides">
             <div ng-repeat="slideItem in productData.bannerList" slide-repeat-directive>
-                <a  href="product.html" >
+                <a  href="product.html#/{{slideItem}}" >
                     <img u="image" ng-src="http://placehold.it/1020x456">
                 </a>
             </div>
@@ -80,7 +80,7 @@
 
 
                         <div ng-repeat="productItem in productData.products" class="col-sm-4" style="padding: 0px 2px 0px 2px;">
-                            <a href="product.html">
+                            <a href="product.html#/{{productItem.skuName}}">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     

@@ -1,5 +1,10 @@
 var essotHeaderApp = angular.module('essotHeaderApp', []);
 
+essotHeaderApp.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.html5Mode(true);    
+      }
+ ]);
+
 essotHeaderApp.controller('essotHeaderController', function($scope, $http, $location) {
   
   $scope.searchText;
@@ -13,7 +18,13 @@ essotHeaderApp.controller('essotHeaderController', function($scope, $http, $loca
    }); 
 
    $scope.search = function() {
-		var url = "search.html?key="+$scope.searchText;
-		window.location.href = url	
+		  var url = "search.html?key="+$scope.searchText;
+		  window.location.href = url	
    };
+
+   $scope.loadCategoryPage = function(data) {
+      var url = "category.html#/"+data.categoryID;
+      window.location.href = url; 
+      window.location.reload(false);
+    };
 });
