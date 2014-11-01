@@ -4,7 +4,8 @@ essotApp.controller('essotController', function($scope, $http, $location) {
 
  	$scope.productData = [];
 
- 	var url = "http://122.160.164.121:8090/essotg/rest/productCategory/349";
+ 	var catID = $location.url().split('/')[1];
+ 	var url = "http://122.160.164.121:8090/essotg/rest/productCategory/"+ catID;
 
    	$http.get(url)
          .success(function(data) {

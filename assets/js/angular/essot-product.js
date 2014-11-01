@@ -2,7 +2,7 @@ var essotApp = angular.module('essotApp', []);
 
 essotApp.controller('essotController', function($scope, $http, $location) {
 
- var skuName = "Flutebudz002";
+ var skuName = $location.url().split('/')[1];
  var url = "http://122.160.164.121:8090/essotg/rest/product/detail/" + skuName;
  var imageJsonPath = "../../marketing/image/"+skuName+"/images.json" ;
  $scope.productData = [];
@@ -13,7 +13,11 @@ $http.get(url)
 			$scope.loaded = true;
 			$scope.productData = data;
 
-			$scope.relatedSkuLoops = Math.ceil($scope.productData.details.relatedskus.length/3);
+			$scope.relatedSkuLoops = 0;
+
+			if($scope.productData.details.relatedskus != null){
+				$scope.relatedSkuLoops = Math.ceil($scope.productData.details.relatedskus.length/3);
+			}
 
 			$http.get(imageJsonPath)
 				 .success(function(data) {
@@ -76,3 +80,4 @@ essotApp.filter('range', function() {
     return val;
   };
 });
+ tr
