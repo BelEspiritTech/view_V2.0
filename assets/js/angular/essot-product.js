@@ -22,8 +22,13 @@ $http.get(url)
 
 			$http.get(imageJsonPath)
 				 .success(function(data) {
+				 	$scope.thumbLoops = 0;
 					$scope.thumbImages = data;
 					
+					if($scope.thumbImages.images != null){
+						$scope.thumbLoops = Math.ceil($scope.thumbImages.images.length/4);
+					}
+
 					var imageBreak = $scope.thumbImages.images[0].split('_');
 					var largeImage = "assets/img/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
 					var XlargeImage = "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg";

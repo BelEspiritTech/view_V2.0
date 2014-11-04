@@ -62,9 +62,9 @@
                                 
                               <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                      <img ng-repeat="image in thumbImages.images" ng-src="assets/img/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
-                                    </div>
+                                    <div ng-repeat="n in [] | range:thumbLoops" class="item" ng-class="{active : $first}">
+                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4" ng-src="assets/img/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
+                                     </div>
                                 </div>
 
                                   <!-- Controls -->
@@ -185,7 +185,6 @@
                     
                     <div class="recommended_items" ng-show="relatedSkuLoops != 0"><!--recommended_items-->
                         <h2 class="title text-center">You may also like</h2>
-                        
                         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div ng-repeat="n in [] | range:relatedSkuLoops" class="item" ng-class="{active : $first}">   
