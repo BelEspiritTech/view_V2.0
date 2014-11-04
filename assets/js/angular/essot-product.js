@@ -31,16 +31,16 @@ $http.get(url)
 
 					var imageBreak = $scope.thumbImages.images[0].split('_');
 					var largeImage = "assets/img/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
-					var XlargeImage = "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg";
+					var XlargeImage = "assets/img/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg";
 
 					angular.element(document.querySelector('#one')).attr("src",largeImage);
 
-					/*var options = {	zoomSizeMode :'zoom',
+					var options = {	zoomSizeMode :'zoom',
 									zoomOffsetX : 80,
 									zoomOffsetY : 25,
 									zoomImage : "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 
-					angular.element(document.querySelector('#one')).CloudZoom(options); */					
+					angular.element(document.querySelector('#one')).CloudZoom(options);					
 			
 				}).error(function(err) {
 					console.log(err);
@@ -54,15 +54,14 @@ $scope.toggleEnCode = function(data) {
 		var imageBreak = $scope.thumbImages.images[data].split('_');
 		var largeImage = "assets/img/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
 		
-		/*angular.element(document.querySelector('#one')).data('CloudZoom').destroy();
+		angular.element(document.querySelector('#one')).data('CloudZoom').destroy();
 		var options = {zoomSizeMode :'zoom',
 		                zoomOffsetX : 80,
 						zoomOffsetY : 25,
-				 		zoomImage : "/marketing/image/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
+				 		zoomImage : "assets/img/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 		 
-		*/
 		angular.element(document.querySelector('#one')).attr("src",largeImage);
-		//angular.element(document.querySelector('#one')).CloudZoom(options); 
+		angular.element(document.querySelector('#one')).CloudZoom(options); 
 		
 };
     

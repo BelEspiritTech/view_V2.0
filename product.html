@@ -63,7 +63,7 @@
                               <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div ng-repeat="n in [] | range:thumbLoops" class="item" ng-class="{active : $first}">
-                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4" ng-src="assets/img/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
+                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4 track by $index" ng-src="assets/img/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
                                      </div>
                                 </div>
 

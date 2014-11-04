@@ -60,7 +60,7 @@
 
     <!-- Category Products-->
 
-    <section>
+     <section>
         <div class="container">
             <div class="row">
 
@@ -72,7 +72,8 @@
                             </div>
                           <br>  
 
-                        <div ng-repeat="product in data.result" class="col-sm-4">
+
+                        <div ng-repeat="product in data.result" class="col-sm-4" style="padding: 0px 2px 0px 2px;">
                             <a href="product.html#/{{product.productDetails.skuName}}" target="_self">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -80,7 +81,7 @@
                                     <div class="productinfo text-center">
                                         <!--<img u="image" ng-src="http://placehold.it/270x250"/> -->
                                         <img u="image" ng-src="assets/img/{{product.productDetails.skuName}}/{{product.productDetails.skuName}}_medium.jpg"/>
-                                        <h3 ng-bind="product.productDetails.name"></h3>
+                                        <p ng-bind="product.productDetails.name"></p>
                                     </div>
                                     
                                     <div class="product-overlay">
@@ -100,8 +101,7 @@
                             </a>
                         </div>
 
-
-                      </div>
+                        </div>
                         <!--features_items-->
 
 
@@ -110,12 +110,6 @@
                 </div>
             </div>
     </section>
-
-
-
-
-
-
     <!-- Footer Portion-->
 
             <div id="footerContent" ng-include src="'footer.html'"></div>
