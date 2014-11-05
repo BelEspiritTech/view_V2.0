@@ -106,7 +106,7 @@ essotApp.directive('bannerThumbDirective', function () {
    return {
         link: function ($scope, element, attrs) {
            var imagePath = "assets/img/"+$scope.displayItems.categories[$scope.$index].categoryName+"_thumb.jpg"
-           attrs.$set('src', 'assets/img/audio.jpg');
+           attrs.$set('src', 'assets/img/audio_thumb.jpg');
 
            if($scope.$last){
            		jssorcall();

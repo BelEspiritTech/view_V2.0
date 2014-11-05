@@ -1,8 +1,4 @@
 var essotTitleApp = angular.module('essotTitleApp', []);
-essotTitleApp.config(['$locationProvider', function($locationProvider) {
-    $locationProvider.html5Mode(true);    
-      }
- ]);
 
 essotTitleApp.controller('essotTitleController', function($scope, $http, $location) {
   $scope.pageTitle = 'Electronic | Essot India';
@@ -10,7 +6,7 @@ essotTitleApp.controller('essotTitleController', function($scope, $http, $locati
 
   if(current_url.indexOf("category") != -1){
   
-    var catID = '349';
+    var catID = current_url.split('/')[1];;
     var url = "http://122.160.164.121:8090/essotg/rest/category/list/" + catID;
     $http.get(url)
        .success(function(data) {
@@ -21,7 +17,7 @@ essotTitleApp.controller('essotTitleController', function($scope, $http, $locati
 
   }else if(current_url.indexOf("product") != -1){
       
-      var skuName = 'Flutebudz002';
+      var skuName = current_url.split('/')[1];
       var url = "http://122.160.164.121:8090/essotg/rest/product/pagetitle/" + skuName;
       $http.get(url)
         .success(function(data) {
