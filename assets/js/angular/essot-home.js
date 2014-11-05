@@ -6,16 +6,18 @@ essotApp.controller('essotController', function($scope, $http, $location) {
 	.success(function(data) {
 		$scope.loaded = true;
 		$scope.displayItems = data;
+		$scope.temp = "audio";
 
 	}).error(function(err) {
 		console.log(err);
 	});
 
-	$scope.init = function(initJsor){
-        if(initJsor){
-         	jssorcall();
-     	}
-	};
+	//$scope.init = function(initJsor){
+        //if(initJsor){
+         	//jssorcall();
+			//angular.element(document.querySelector('#banner_0')).attr("src","assets/img/audio.jpg");
+        //}
+	//};
 });
 
 essotApp.directive('sliderRepeatDirective', function() {
@@ -89,5 +91,27 @@ essotApp.directive('fadeboxSecondInitDirective', function() {
     	});
   	}
  }; 
+});
+
+essotApp.directive('bannerImageDirective', function () {
+   return {
+        link: function ($scope, element, attrs) {
+           var imagePath = "assets/img/"+$scope.displayItems.categories[$scope.$index].categoryName+".jpg"
+           attrs.$set('src', 'assets/img/audio.jpg');
+        }
+    };
+});
+
+essotApp.directive('bannerThumbDirective', function () {
+   return {
+        link: function ($scope, element, attrs) {
+           var imagePath = "assets/img/"+$scope.displayItems.categories[$scope.$index].categoryName+"_thumb.jpg"
+           attrs.$set('src', 'assets/img/audio.jpg');
+
+           if($scope.$last){
+           		jssorcall();
+           }
+        }
+    };
 });
 
