@@ -32,7 +32,7 @@
 </head>
 
 <body>
-
+<div id="fb-root"></div>
     <!--Header Portion -->
     <div id="headerContent" ng-controller="essotHeaderController" ng-include src="'header.html'">
     </div>
@@ -63,7 +63,7 @@
                               <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div ng-repeat="n in [] | range:thumbLoops" class="item" ng-class="{active : $first}">
-                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4 track by $index" ng-src="assets/img/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
+                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4 track by $index" ng-src="assets/img/products/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
                                      </div>
                                 </div>
 
@@ -121,7 +121,10 @@
                                     <i class="fa fa-shopping-cart"></i>
                                     Add to cart
                                 </button> -->
-                                <!-- <a href=""><img src="assets/img/product-details/share.png" class="share img-responsive"  alt="" /></a> -->
+                                <div>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://bit.ly/1rHjHrY">Share on Facebook</a>
+                                </div>
+				<!-- <a href=""><img src="assets/img/product-details/share.png" class="share img-responsive"  alt="" /></a> -->
                             </div><!--/product-information-->
                         </div>
                     </div><!--/product-details-->

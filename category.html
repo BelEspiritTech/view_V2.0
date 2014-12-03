@@ -51,11 +51,11 @@
         <div id="slides">
             <div ng-repeat="slideItem in productData.bannerList" slide-repeat-directive>
                 <a  href="product.html#/{{slideItem}}" >
-                    <img u="image" ng-src="http://placehold.it/1020x456">
+                    <img u="image" ng-src="assets/img/products/{{slideItem}}/{{slideItem}}_banner.jpg">
                 </a>
             </div>
-            <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="fa-chevron-left icon-large"></i></a>
-            <a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa-chevron-right icon-large"></i></a>
+           <!-- <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="fa-chevron-left icon-large"></i></a>
+            <a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa-chevron-right icon-large"></i></a> -->
         </div>
     </div>
 
@@ -86,7 +86,7 @@
                                     
                                     <div class="productinfo text-center">
                                         <!--<img u="image" ng-src="http://placehold.it/270x250"/> -->
-                                        <img u="image" ng-src="assets/img/{{productItem.skuName}}/{{productItem.skuName}}_medium.jpg"/>
+                                        <img u="image" ng-src="assets/img/products/{{productItem.skuName}}/{{productItem.skuName}}_medium.jpg"/>
                                         <p ng-bind="productItem.name"></p>
                                     </div>
                                     

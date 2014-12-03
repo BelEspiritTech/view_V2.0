@@ -50,21 +50,21 @@ essotApp.directive('sliderRepeatDirective', function() {
  }; 
 });
 
-essotApp.directive('fadeboxInitDirective', function() {
+essotApp.directive('fadeboxThirdInitDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-	      angular.element(document.querySelector('.fade1')).slick({
-        	dots: false,
-        	infinite: true,
-        	speed: 500,
-        	fade: true,
-        	autoplay: false,
-        	autoplaySpeed: 4000,
-        	arrows: false,
-        	slide: 'div',
-        	cssEase: 'linear'
-    	});
-  	}
+        angular.element(document.querySelector('.fade3')).slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: false,
+          slide: 'div',
+          cssEase: 'linear'
+      });
+    }
  }; 
 });
 

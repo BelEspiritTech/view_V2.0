@@ -110,25 +110,24 @@
                         <div class="col-md-6">
                             <section id="feature blue">
                                 
-                                    <div class="slider fadebox fade1">
-                                        <div ng-repeat="item in displayItems.topProducts | limitTo:6 | limitTo : 3" fadebox-init-directive>
+                                    <div class="slider fadebox fade2">
+                                        <div ng-repeat="item in displayItems.topProducts | limitTo:6 | limitTo : 3" fadebox-second-init-directive>
                                             <div class="image">
-                                                <a href="product.html#/{{item.skuName}}"><img src="http://placehold.it/550x510"></a>
+                                                <a href="product.html#/{{item.skuName}}"><img ng-src="assets/img/products/{{item.skuName}}/{{item.skuName}}_medium.jpg"></a>
                                             </div>
                                         </div>
                                     </div>
                                 
                             </section>       
                         </div>
-                            
- 
-                        <div class="col-md-6">
+                             
+                         <div class="col-md-6">
                               <section id="features blue">
                                 
-                                    <div class="slider fadebox fade2">
-                                        <div ng-repeat="item in displayItems.topProducts | limitTo:6 | limitTo:-3" fadebox-second-init-directive>
+                                    <div class="slider fadebox fade3">
+                                        <div ng-repeat="item in displayItems.topProducts | limitTo:6 | limitTo:-3" fadebox-third-init-directive>
                                             <div class="image">
-                                                <a href="product.html#/{{item.skuName}}"><img src="http://placehold.it/550x510"></a>
+                                                <a href="product.html#/{{item.skuName}}"><img ng-src="assets/img/products/{{item.skuName}}/{{item.skuName}}_medium.jpg"></a>
                                             </div>
                                         </div>                                        
                                     </div>
