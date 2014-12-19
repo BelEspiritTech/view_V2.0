@@ -7,7 +7,7 @@ essotApp.config(['$locationProvider', function($locationProvider) {
 
 essotApp.controller('essotController', function($scope, $http, $location) {
 	$scope.searchText = $location.search()['key'];
-	var url = "http://122.160.164.121:8090/essotg/rest/search/" + $scope.searchText;
+	var url = "http://ec2-54-169-51-153.ap-southeast-1.compute.amazonaws.com:8080/essotg/rest/search/" + $scope.searchText;
 	$http.get(url).success(function(data) {
 		$scope.loaded = true;
 		$scope.data = data;

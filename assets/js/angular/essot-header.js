@@ -9,7 +9,7 @@ essotHeaderApp.controller('essotHeaderController', function($scope, $http, $loca
   
   $scope.searchText;
 
-  $http.get('http://122.160.164.121:8090/essotg/rest/category/menu')
+  $http.get('http://ec2-54-169-51-153.ap-southeast-1.compute.amazonaws.com:8080/essotg/rest/category/menu')
        .success(function(data) {
          $scope.loaded    = true;
          $scope.menuList  = data;
@@ -18,7 +18,7 @@ essotHeaderApp.controller('essotHeaderController', function($scope, $http, $loca
    }); 
 
    $scope.search = function() {
-		  var url = "search.html?key="+$scope.searchText;
+		  var url = "/search.html?key="+$scope.searchText;
 		  window.location.href = url	
    };
 

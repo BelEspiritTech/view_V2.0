@@ -2,7 +2,7 @@ var essotApp = angular.module('essotApp', []);
 
 essotApp.controller('essotController', function($scope, $http, $location) {
 
-	$http.get('http://122.160.164.121:8090/essotg/rest/category/home')
+	$http.get('http://ec2-54-169-51-153.ap-southeast-1.compute.amazonaws.com:8080/essotg/rest/category/home')
 	.success(function(data) {
 		$scope.loaded = true;
 		$scope.displayItems = data;
@@ -89,7 +89,7 @@ essotApp.directive('fadeboxSecondInitDirective', function() {
 essotApp.directive('bannerImageDirective', function () {
    return {
         link: function ($scope, element, attrs) {
-           var imagePath = "assets/img/"+$scope.displayItems.categories[$scope.$index].categoryName+".jpg"
+           var imagePath = "essot_img/"+$scope.displayItems.categories[$scope.$index].categoryName+".jpg"
            attrs.$set('src', imagePath);
         }
     };
@@ -98,7 +98,7 @@ essotApp.directive('bannerImageDirective', function () {
 essotApp.directive('bannerThumbDirective', function () {
    return {
         link: function ($scope, element, attrs) {
-           var imagePath = "assets/img/"+$scope.displayItems.categories[$scope.$index].categoryName+"_thumb.jpg"
+           var imagePath = "essot_img/"+$scope.displayItems.categories[$scope.$index].categoryName+"_thumb.jpg"
            attrs.$set('src', imagePath);
 
            if($scope.$last){

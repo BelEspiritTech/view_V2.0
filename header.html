@@ -9,8 +9,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <a class="navbar-brand" href="home.html">
-                        <img src="assets/img/brand/logo1.png">
+                    <a class="navbar-brand" href="/home.html">
+                        <img src="/essot_asset/img/brand/logo1.png">
                     </a>
                 </div>
                 <div class="col-md-offset-5 col-md-3 pull-right">
@@ -18,13 +18,13 @@
                     <br>
                     <font color="white" size="2px">&nbsp;&nbsp;&nbsp; Join Us On :</font>&nbsp;&nbsp;
                     <a href="https://www.facebook.com/Essotglobal" target="_blank">
-                        <img src="assets/img/social/FACEBOOK.png" data-toggle="tooltip" data-placement="top" title="Facebook Page" />
+                        <img src="/essot_asset/img/social/FACEBOOK.png" data-toggle="tooltip" data-placement="top" title="Facebook Page" />
                     </a>&nbsp;
                     <a href="https://twitter.com/essotglobal" target="_blank">
-                        <img src="assets/img/social/TWITTER.png" data-toggle="tooltip" data-placement="top" title="Twitter Page" />
+                        <img src="/essot_asset/img/social/TWITTER.png" data-toggle="tooltip" data-placement="top" title="Twitter Page" />
                     </a>&nbsp;
                     <a href="https://youtube.com/" target="_blank">
-                        <img src="assets/img/social/YOU_TUBE.png" data-toggle="tooltip" data-placement="top" title="YouTube Page" />
+                        <img src="/essot_asset/img/social/YOU_TUBE.png" data-toggle="tooltip" data-placement="top" title="YouTube Page" />
                     </a>
                 </div>
             </div>
@@ -52,16 +52,16 @@
                             <ul class="nav navbar-nav" ng-show='$parent.menuList.menu.length > 0'>
                                 <!-- Tabs -->
                                 <li ng-repeat-start="menuItem in $parent.menuList.menu" class="dropdown menulabel">
-                                    <a ng-href="category.html#/{{menuItem.categoryID}}" ng-click="loadCategoryPage(menuItem)" class="dropdown-toggle" ng-bind='menuItem.categoryName'></a>
+                                    <a ng-href="/category/{{menuItem.categoryID}}" class="dropdown-toggle" ng-bind='menuItem.categoryName'></a>
                                     <ul class="dropdown-menu" ng-show='menuItem.subCategories.length > 0'>
                                         <li ng-repeat-start="subItem in menuItem.subCategories">
-                                            <a ng-href="category.html#/{{subItem.categoryID}}" ng-click="loadCategoryPage(subItem)" class="dropdown-toggle" ng-bind='subItem.categoryName'></a>
-                                            <ul class="dropdown-menu sub-menu" ng-show='subItem.subCategories.length > 0'>
+                                            <a ng-href="/category/{{subItem.categoryID}}" class="dropdown-toggle" ng-bind='subItem.categoryName'></a>
+                                            <!-- <ul class="dropdown-menu sub-menu" ng-show='subItem.subCategories.length > 0'>
                                                 <li ng-repeat-start="item in subItem.subCategories">
-                                                    <a ng-href="category.html#/{{item.categoryID}}" ng-click="loadCategoryPage(item)" class="dropdown-toggle" ng-bind='item.categoryName'></a>
+                                                    <a ng-href="/category/{{item.categoryID}}" class="dropdown-toggle" ng-bind='item.categoryName'></a>
                                                 </li>
                                                 <li ng-if="!$last" ng-repeat-end class="divider"></li>
-                                            </ul>
+                                            </ul> -->
                                         </li>
                                         <li ng-if="!$last" ng-repeat-end class="divider"></li>
                                     </ul>

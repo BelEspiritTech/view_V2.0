@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="/essot_asset/img/favicon.png">
 
     <title id="titleContent" ng-controller="essotTitleController" ng-bind="pageTitle"></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/UItoTop/css/ui.totop.css" rel="stylesheet">
+    <link href="/essot_asset/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/essot_asset/UItoTop/css/ui.totop.css" rel="stylesheet">
     <!-- Custom Stylesheet For This Template -->
-    <link href="assets/css/stylesheet.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/essot_asset/css/stylesheet.css" rel="stylesheet">
+    <link href="/essot_asset/css/main.css" rel="stylesheet">
+    <link href="/essot_asset/css/font-awesome.min.css" rel="stylesheet">
     <!-- Tipuedrop Search Plugin -->
-    <link rel="stylesheet" type="text/css" href="assets/tipuedrop/tipuedrop.css">
-    <link rel="stylesheet" type="text/css" href="assets/cloudzoom/cloudzoom.css">
+    <link rel="stylesheet" type="text/css" href="/essot_asset/tipuedrop/tipuedrop.css">
+    <link rel="stylesheet" type="text/css" href="/essot_asset/cloudzoom/cloudzoom.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="assets/js/html5shiv.js"></script>
-        <script src="assets/js/respond.min.js"></script>
+        <script src="/essot_asset/js/html5shiv.js"></script>
+        <script src="/essot_asset/js/respond.min.js"></script>
         <![endif]-->
 
 
@@ -34,7 +34,7 @@
 <body>
 <div id="fb-root"></div>
     <!--Header Portion -->
-    <div id="headerContent" ng-controller="essotHeaderController" ng-include src="'header.html'">
+    <div id="headerContent" ng-controller="essotHeaderController" ng-include src="'/essot_includes/header'">
     </div>
 
     <!-- Body -->
@@ -55,7 +55,7 @@
 
                         <!-- Product Zoom Plugin : Cloud Zoom -->
                             <div class="view-product">
-                                <img id="one" src="http://placehold.it/480x380" alt="" />
+                                <img id="one" alt="" />
                                 
                             </div>
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -63,7 +63,7 @@
                               <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div ng-repeat="n in [] | range:thumbLoops" class="item" ng-class="{active : $first}">
-                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4 track by $index" ng-src="assets/img/products/{{productData.details.productDetails.skuName}}/{{image}}" ng-mouseover="toggleEnCode($index)" alt="">
+                                            <img ng-repeat="image in thumbImages.images | limitTo: - (thumbImages.images.length - (n * 4)) | limitTo : 4 track by $index" ng-src="/essot_img/{{image}}" ng-click="toggleEnCode(image)" alt="">
                                      </div>
                                 </div>
 
@@ -122,7 +122,7 @@
                                     Add to cart
                                 </button> -->
                                 <div>
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://bit.ly/1rHjHrY">Share on Facebook</a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{productLink}}" target="_blank">Share on Facebook</a>
                                 </div>
 				<!-- <a href=""><img src="assets/img/product-details/share.png" class="share img-responsive"  alt="" /></a> -->
                             </div><!--/product-information-->
@@ -195,7 +195,7 @@
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <a ng-href="product.html#/{{product.relSKU}}" ng-click="goToProduct(product)">
+                                                    <a ng-href="/product/{{product.relSKU}}" > <!-- ng-click="goToProduct(product)"> -->
                                                         <img src="http://placehold.it/310x150" alt="" />
                                                     </a>
                                                     <h3 style="font-family:rupee;font-size:20px" ng-bind="product.relProdPrice| currency:'R '" ></h3>
@@ -225,38 +225,38 @@
 
     <!-- Footer Portion-->
 
-            <div id="footerContent" ng-include src="'footer.html'"></div>
+            <div id="footerContent" ng-include src="'/essot_includes/footer'"></div>
 
             <!-- Modal Windows Portion-->
 
-            <div id="aboutUsContent" ng-include src="'aboutus.html'"></div>
-            <div id="contactUsContent" ng-include src="'contactus.html'"></div>
-            <div id="privacyPolicyContent" ng-include src="'privacypolicy.html'"></div>
-            <div id="tnCContent" ng-include src="'termsandconditions.html'"></div>
+            <div id="aboutUsContent" ng-include src="'/essot_includes/aboutus'"></div>
+            <div id="contactUsContent" ng-include src="'/essot_includes/contactus'"></div>
+            <div id="privacyPolicyContent" ng-include src="'/essot_includes/privacypolicy'"></div>
+            <div id="tnCContent" ng-include src="'/essot_includes/termsandconditions'"></div>
     </div>
 
     <!-- Bootstrap JS & Others JavaScript Plugins
                 ================================================== -->
     <!-- Placed At The End Of The Document So Page Loads Faster -->
-    <script src="assets/js/jquery-2.0.3.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/UItoTop/js/easing.js"></script>
-    <script src="assets/UItoTop/js/jquery.ui.totop.min.js"></script>
-    <script src="assets/cloudzoom/cloudzoom.js"  type="text/javascript"></script>
+    <script src="/essot_asset/js/jquery-2.0.3.min.js"></script>
+    <script src="/essot_asset/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/essot_asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/essot_asset/UItoTop/js/easing.js"></script>
+    <script src="/essot_asset/UItoTop/js/jquery.ui.totop.min.js"></script>
+    <script src="/essot_asset/cloudzoom/cloudzoom.js"  type="text/javascript"></script>
 
-    <script src="assets/js/common.js"></script>
-    <script type="text/javascript" src="assets/tipuedrop/tipuedrop_content.js"></script>
-    <script type="text/javascript" src="assets/tipuedrop/tipuedrop.js"></script>
+    <script src="/essot_asset/js/common.js"></script>
+    <script type="text/javascript" src="/essot_asset/tipuedrop/tipuedrop_content.js"></script>
+    <script type="text/javascript" src="/essot_asset/tipuedrop/tipuedrop.js"></script>
     <!-- Slick Slider Carousal -->
-    <script type="text/javascript" src="assets/slick/slick.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.slides.min.js"></script>
-    <script type="text/javascript" src="assets/js/totop.js"></script>
+    <script type="text/javascript" src="/essot_asset/slick/slick.js"></script>
+    <script type="text/javascript" src="/essot_asset/js/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="/essot_asset/js/totop.js"></script>
    
-    <script type="text/javascript" src="assets/js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="assets/js/angular/essot-product.js"></script>
-    <script type="text/javascript" src="assets/js/angular/essot-header.js"></script>
-    <script type="text/javascript" src="assets/js/angular/essot-title.js"></script>
+    <script type="text/javascript" src="/essot_asset/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/essot_asset/js/angular/essot-product.js"></script>
+    <script type="text/javascript" src="/essot_asset/js/angular/essot-header.js"></script>
+    <script type="text/javascript" src="/essot_asset/js/angular/essot-title.js"></script>
 </body>
 
 </html>

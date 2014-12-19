@@ -74,13 +74,13 @@
 
 
                         <div ng-repeat="product in data.result" class="col-sm-4" style="padding: 0px 2px 0px 2px;">
-                            <a href="product.html#/{{product.productDetails.skuName}}" target="_self">
+                            <a href="/product/{{product.productDetails.skuName}}" target="_self">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     
                                     <div class="productinfo text-center">
                                         <!--<img u="image" ng-src="http://placehold.it/270x250"/> -->
-                                        <img u="image" ng-src="assets/img/{{product.productDetails.skuName}}/{{product.productDetails.skuName}}_medium.jpg"/>
+                                        <img u="image" ng-src="/essot_img/{{product.productDetails.skuName}}_medium.jpg"/>
                                         <p ng-bind="product.productDetails.name"></p>
                                     </div>
                                     
@@ -88,10 +88,10 @@
                                         <div class="overlay-content">
                                             <h2 style="font-family:rupee;font-size:20px" ng-bind="product.productDetails.price  | currency:'R '"></h2>
                                             <p class="product-overview">
-                                                    &bull; This is an amazing product <br>
-                                                    &bull;  Super awesome stuffs 
+                                                    &bull; {{product.productDetails.topFeatures[0]}} <br>
+                                                    &bull;  {{product.productDetails.topFeatures[1]}} 
                                             </p>     
-                                            <div class="product-logo" align="center"><img src="assets/img/brand/product-logo.png" alt="EssotGlobal"/></div>
+                                            <div class="product-logo" align="center"><img src="/essot_asset/img/brand/product-logo.png" alt="EssotGlobal"/></div>
                                         </div>
                                     </div>
                                     <!--<img src="assets/img/new.png" class="new" alt="" />

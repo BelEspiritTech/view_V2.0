@@ -1,0 +1,15 @@
+DirectoryIndex home.html
+
+RewriteEngine on
+
+RewriteRule ^essot_img/(.*)$ https://s3-ap-southeast-1.amazonaws.com/essot/$1 [L]
+RewriteRule ^essot_asset/(.*)$ assets/$1 [PT]
+RewriteRule ^essot_includes/(.*)$ $1.html [PT]
+
+RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|Pinterest|Google.*snippet)
+RewriteRule ^product/(.*)$ http://ec2-54-169-51-153.ap-southeast-1.compute.amazonaws.com:8080/essotg/FBDumpServlet?product=$1 [P,L]
+
+RewriteRule ^category/(.*)$ category.html#/$1 [L]
+RewriteRule ^product/(.*)$  product.html#/$1 [L]
+
+ 

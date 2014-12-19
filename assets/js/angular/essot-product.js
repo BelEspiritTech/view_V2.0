@@ -2,13 +2,14 @@ var essotApp = angular.module('essotApp', []);
 
 essotApp.controller('essotController', function($scope, $http, $location) {
 
- var skuName = $location.url().split('/')[1];
- var url = "http://122.160.164.121:8090/essotg/rest/product/detail/" + skuName;
- //beta/v2.2/assets/img/FuzionBT002
- var imageJsonPath = "assets/img/products/"+skuName+"/images.json" ;
+ var skuName = window.location.pathname.split('/')[2];
+ var url = "http://ec2-54-169-51-153.ap-southeast-1.compute.amazonaws.com:8080/essotg/rest/product/detail/" + skuName;
+
+ var imageJsonPath = "/assets/json/"+skuName+".json" ;
  $scope.productData = [];
  $scope.thumbImages = [];
- $scope.productLink = $location.url();
+ $scope.productLink = window.location.pathname;
+ $scope.s3Bucket = "https/s3-ap-southeast-1.amazonaws.com/essot/";
 
 
 $http.get(url)
@@ -32,15 +33,15 @@ $http.get(url)
 					}
 
 					var imageBreak = $scope.thumbImages.images[0].split('_');
-					var largeImage = "assets/img/products/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
-					var XlargeImage = "assets/img/products/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg";
+					var largeImage = "/essot_img/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
+					var XlargeImage = "/essot_img/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg";
 
 					angular.element(document.querySelector('#one')).attr("src",largeImage);
 
 					var options = {	zoomSizeMode :'zoom',
 									zoomOffsetX : 80,
 									zoomOffsetY : 25,
-									zoomImage : "assets/img/products/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
+									zoomImage : "/essot_img/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 
 					angular.element(document.querySelector('#one')).CloudZoom(options);					
 			
@@ -53,14 +54,14 @@ $http.get(url)
 });
 
 $scope.toggleEnCode = function(data) {
-		var imageBreak = $scope.thumbImages.images[data].split('_');
-		var largeImage = "assets/img/products/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
+		var imageBreak = data.split('_');
+		var largeImage = "/essot_img/" + imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_large.jpg";
 		
 		angular.element(document.querySelector('#one')).data('CloudZoom').destroy();
 		var options = {zoomSizeMode :'zoom',
 		                zoomOffsetX : 80,
 						zoomOffsetY : 25,
-				 		zoomImage : "assets/img/products/" +imageBreak[0]+"/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
+				 		zoomImage : "/essot_img/" + imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 		 
 		angular.element(document.querySelector('#one')).attr("src",largeImage);
 		angular.element(document.querySelector('#one')).CloudZoom(options); 

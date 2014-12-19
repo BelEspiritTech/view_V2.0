@@ -62,5 +62,9 @@
                     left: 0px;
                     width: 140px;
                     height: 70px;
-                    border: #fff 1px solid;
-                }            
+                    /*border: #fff 1px solid;*/
+                }
+
+#slider1_container{
+    background: none !important;
+}
