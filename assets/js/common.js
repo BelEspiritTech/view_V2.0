@@ -28,3 +28,16 @@ tpj(document).ready(function() {
         easingType: 'easeOutQuart'
     });
 });
+
+
+
+/**
+ * Javascript for popup window
+ * */
+
+function popup(url) {
+    alert('The URL About to open is');
+    var newwindow=window.open(url,'name','height=600,width=500');
+    if (window.focus) {newwindow.focus()}
+    return false;
+}
