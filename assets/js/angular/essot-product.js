@@ -78,6 +78,13 @@ $scope.goToProduct = function(data) {
 	window.location.reload(false);
 };
 
+$scope.fbpopup = function(){
+    var url = "https://www.facebook.com/sharer/sharer.php?u=" + window.location.pathname;
+    var newwindow=window.open(url,'name','height=600,width=500');
+    if (window.focus) {newwindow.focus()}
+    return false;
+};
+
 });
 
 essotApp.filter('range', function() {
