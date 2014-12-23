@@ -39,8 +39,8 @@ $http.get(url)
 					angular.element(document.querySelector('#one')).attr("src",largeImage);
 
 					var options = {	zoomSizeMode :'zoom',
-									zoomOffsetX : 80,
-									zoomOffsetY : 25,
+									zoomOffsetX : 28,
+									zoomOffsetY : 0,
 									zoomImage : "/essot_img/"+ imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 
 					angular.element(document.querySelector('#one')).CloudZoom(options);					
@@ -59,8 +59,8 @@ $scope.toggleEnCode = function(data) {
 		
 		angular.element(document.querySelector('#one')).data('CloudZoom').destroy();
 		var options = {zoomSizeMode :'zoom',
-		                zoomOffsetX : 80,
-						zoomOffsetY : 25,
+		                zoomOffsetX : 25,
+						zoomOffsetY : 5,
 				 		zoomImage : "/essot_img/" + imageBreak[0] + "_" + imageBreak[1] + "_" + imageBreak[2] + "_xlarge.jpg"};
 		 
 		angular.element(document.querySelector('#one')).attr("src",largeImage);

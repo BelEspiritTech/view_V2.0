@@ -57,6 +57,15 @@
            <!-- <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="fa-chevron-left icon-large"></i></a>
             <a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa-chevron-right icon-large"></i></a> -->
         </div>
+         <div ng-hide="productData.bannerList.length > 1">
+            <div ng-repeat="slideItem in productData.bannerList" slide-repeat-directive>
+                <a  href="/product/{{slideItem}}" >
+                    <img u="image" ng-src="/essot_img/{{slideItem}}_banner.jpg">
+                </a>
+            </div>
+           <!-- <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="fa-chevron-left icon-large"></i></a>
+            <a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa-chevron-right icon-large"></i></a> -->
+        </div>
     </div>
 
     <!-- Carousal Ends here-->
