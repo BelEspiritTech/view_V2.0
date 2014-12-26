@@ -21,7 +21,7 @@ essotApp.directive('sliderRepeatDirective', function() {
 	        infinite: false,
 	        speed: 300,
 	        slidesToShow: 3,
-	        slidesToScroll: 4,
+	        slidesToScroll: 3,
 	        autoplay: true,
 	        autoplaySpeed: 4000,
 	        responsive: [{
